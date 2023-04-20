@@ -27,3 +27,18 @@ prometheus_scrape_configs:
       target_label: chain
       regex: ksmcc3
       replacement: kusama
+    - action: replace
+      source_labels: [chain]
+      target_label: chain
+      regex: "collectives_polkadot"
+      replacement: "collectives-polkadot"
+    - action: replace
+      source_labels: [chain]
+      target_label: chain
+      regex: "collectives_westend"
+      replacement: "collectives-westend"
+    - action: replace
+      source_labels: [chain]
+      target_label: chain
+      regex: "encointer-kusama"
+      replacement: "encointer"
