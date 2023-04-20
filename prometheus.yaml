@@ -1,0 +1,7 @@
+- hosts: prometheus
+  roles:
+    - prometheus.prometheus.prometheus
+  tags:
+    - prometheus_configure
+    - prometheus_install
+    - prometheus_run

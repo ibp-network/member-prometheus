@@ -1,0 +1,7 @@
+roles:
+collections:
+  - name: nginxinc.nginx_core
+    source: https://galaxy.ansible.com
+
+  - name: prometheus.prometheus
+    source: https://galaxy.ansible.com

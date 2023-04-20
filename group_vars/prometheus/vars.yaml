@@ -1,0 +1,15 @@
+prometheus_version: 2.37.6
+
+prometheus_port: 9090
+prometheus_web_listen_address: "127.0.0.1:{{ prometheus_port }}"
+prometheus_web_external_url: "https://{{ alias_prometheus }}"
+
+prometheus_storage_retention: "30d"
+
+prometheus_global:
+  scrape_interval: 15s
+  scrape_timeout: 10s
+  evaluation_interval: 15s
+
+prometheus_external_labels:
+    member: '{{ ibp_name }}'
