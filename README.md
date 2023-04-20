@@ -68,9 +68,9 @@ ansible-playbook -i ./inventory.yaml ./prometheus.yaml -D
 ### Next steps
 - configure HAproxy
 - create rules to only allow the federation server to access your instance
-- Do a PR to add your prometheus instance to list in `ibpfederation` job [here](https://github.com/ibp-network/prometheus-ansible/blob/main/roles/prometheus/files/prometheus.yml)
+- Do a PR to add your prometheus instance via a new job, use your member name as `job_name` [here](https://github.com/ibp-network/prometheus-ansible/blob/main/roles/prometheus/files/prometheus.yml)
 ```yaml
-  - job_name: ibpfederation
+  - job_name: membername
     metrics_path: /federate
     honor_labels: true
     scheme: https
@@ -79,6 +79,5 @@ ansible-playbook -i ./inventory.yaml ./prometheus.yaml -D
       - '{job="substrate"}'
     static_configs:
     - targets:
-      - ibp-monitor.amforc.com:9090
-      # - ibp-monitor.member.com:9090
+      - ibp-monitor.member.com:9090
 ```
