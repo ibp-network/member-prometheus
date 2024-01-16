@@ -1,7 +1,14 @@
 roles:
+  - name: nginxinc.nginx_config
+    src: git@github.com:tugytur/ansible-role-nginx-config.git
+    scm: git
+    version: main
+  
+  - name: nginxinc.nginx
+    src: git@github.com:tugytur/ansible-role-nginx.git
+    scm: git
+    version: main
+    
 collections:
-  - name: nginxinc.nginx_core
-    source: https://galaxy.ansible.com
-
   - name: prometheus.prometheus
     source: https://galaxy.ansible.com
