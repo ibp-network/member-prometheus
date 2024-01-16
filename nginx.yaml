@@ -1,18 +1,16 @@
 ---
 - name: install nginx
   hosts: nginx
-  collections:
-    - nginxinc.nginx_core
   tasks:
     - name: Install nginx
       include_role:
-        name: nginx
+        name: nginxinc.nginx
       vars:
         ansible_become: true
     
     - name: Configure NGINX
       include_role:
-        name: nginx_config
+        name: nginxinc.nginx_config
       vars:
         ansible_become: true
         nginx_config_upload_ssl_enable: true
@@ -38,6 +36,9 @@
                         http2: true
                     server_name:
                       - "{{ alias_prometheus }}"
+                    server_tokens: false
+                  http2:
+                    enable: true
                   ssl:
                     certificate:
                       - /etc/ssl/certs/molecule.crt
