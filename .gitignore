@@ -1,2 +1,2 @@
-inventory.yaml
-/group_vars/prometheus/targets.yaml
+inventory.yml
+/group_vars/prometheus/targets.yml

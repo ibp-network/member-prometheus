@@ -1,0 +1,14 @@
+roles:
+  - name: nginx_config
+    src: git@github.com:amforc/ansible-role-nginx-config.git
+    scm: git
+    version: main
+
+  - name: nginx_install
+    src: git@github.com:amforc/ansible-role-nginx-install.git
+    scm: git
+    version: main
+
+collections:
+  - name: prometheus.prometheus
+    source: https://galaxy.ansible.com

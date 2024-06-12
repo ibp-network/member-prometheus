@@ -2,13 +2,10 @@ all:
   vars:
     ansible_user: user
     ibp_name: MEMBERNAME
-    alias_prometheus: ibp-prometheus.domain.com
+    alias_prometheus: ibp-metrics.domain.com
     ansible_python_interpreter: /usr/bin/python3
   children:
     prometheus:
       hosts:
         monibp-001:
           ansible_host: 10.10.10.10
-    nginx:
-      hosts:
-        monibp-001:

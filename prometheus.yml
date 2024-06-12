@@ -1,4 +1,6 @@
-- hosts: prometheus
+---
+- name: Prometheus
+  hosts: prometheus
   roles:
     - prometheus.prometheus.prometheus
   tags:
